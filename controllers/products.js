@@ -33,4 +33,21 @@
 		}).catch(error => error);
 	};
 
+	// Update Product
+	module.exports.updateProduct = (reqParams, reqBody) => {
+		let updatedProduct = {
+			name: reqBody.name,
+			description: reqBody.description,
+			price: reqBody.price
+		};
+
+		return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((product, error) => {
+			if (error) {
+				return false;
+			} else {
+				return {message: 'Update Failed'};
+			}
+		}).catch(error => error);
+	};
+
 

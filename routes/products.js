@@ -22,5 +22,11 @@
 		ProductController.getProduct(req.params).then(resultFromController => res.send(resultFromController));
 	});
 
+	// Update Product
+	route.put('/:productId', auth.verify, auth.verifyAdmin, (req, res) => {
+		ProductController.updateProduct(req.params, req.body).then(resultFromController => res.send(resultFromController));
+	});
+
+
 // [SECTION] Expose Route System
 	module.exports = route;
