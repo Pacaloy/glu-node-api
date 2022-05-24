@@ -23,8 +23,9 @@
 	db.once('open', () => console.log('Connected to MongoDB'));
 
 // [SECTION] Backend Routes
-	// app.use('/users', userRoutes);
-	// app.use('/products', productRoutes);
+	app.use('/users', userRoutes);
+	app.use('/products', productRoutes);
 
 // [SECTION] Server Gateway Response
+	app.get('/', (req, res) => res.send('Capstone Project 2'));
 	app.listen(port, () => console.log(`API is Hosted at port ${port}`));
