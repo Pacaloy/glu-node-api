@@ -19,5 +19,10 @@
 		});
 	};
 
-
+	// Retrieve All Active Courses
+	module.exports.getAllActive = () => {
+		return Product.find({isActive: true}).then(result => {
+			return result;
+		}).catch(error => error);
+	};
 

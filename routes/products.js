@@ -12,5 +12,10 @@
 		ProductController.addProduct(req.body).then(resultFromController => res.send(resultFromController));
 	});
 
+	// Retrieve All Active Courses
+	route.get('/active', (req, res) => {
+		ProductController.getAllActive().then(resultFromController => res.send(resultFromController));
+	});
+
 // [SECTION] Expose Route System
 	module.exports = route;
