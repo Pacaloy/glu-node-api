@@ -8,7 +8,7 @@
 
 // [SECTION] Routes
 	// Add Product
-	route.post('/add', (req, res) => {
+	route.post('/add', auth.verify, auth.verifyAdmin, (req, res) => {
 		ProductController.addProduct(req.body).then(resultFromController => res.send(resultFromController));
 	});
 

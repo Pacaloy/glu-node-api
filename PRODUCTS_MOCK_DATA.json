@@ -1,2 +1,4 @@
 [{"name":"Razer Blade","description":"Razer","price":500},
-{"name":"Predator","description":"Acer","price":500}]
+{"name":"Predator","description":"Acer","price":500},
+{"name":"Legion","description":"Lenovo","price":500},
+{"name":"MacBook Air","description":"Apple","price":500}]
