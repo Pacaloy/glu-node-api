@@ -50,4 +50,17 @@
 		}).catch(error => error);
 	};
 
+	// Archiving a Product
+	module.exports.archiveProduct = (reqParams) => {
+		let updateActiveField = {
+			isActive: false
+		};
 
+		return Product.findByIdAndUpdate(reqParams.productId, updateActiveField).then((product, error) => {
+			if (error) {
+				return {message: 'Archiving Product Failed'};
+			} else {
+				return {message: 'Product Successfully Archived'};
+			}
+		}).catch(error => error);
+	};

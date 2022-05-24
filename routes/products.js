@@ -27,6 +27,11 @@
 		ProductController.updateProduct(req.params, req.body).then(resultFromController => res.send(resultFromController));
 	});
 
+	// Archiving a Product
+	route.put('/:productId/archive', auth.verify, auth.verifyAdmin, (req, res) => {
+		ProductController.archiveProduct(req.params).then(resultFromController => res.send(resultFromController));
+	});
+
 
 // [SECTION] Expose Route System
 	module.exports = route;
