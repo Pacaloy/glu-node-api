@@ -26,3 +26,11 @@
 		}).catch(error => error);
 	};
 
+	// Retrieve Specific Product
+	module.exports.getProduct = (reqParams) => {
+		return Product.findById(reqParams.productId).then(result => {
+			return result;
+		}).catch(error => error);
+	};
+
+
