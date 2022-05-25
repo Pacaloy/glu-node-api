@@ -28,6 +28,6 @@
 	app.use('/orders', orderRoutes);
 
 // [SECTION] Server Gateway Response
-	app.get('/', (req, res) => res.send('Capstone Project 2'));
+	app.get('/', (req, res) => res.send('Welcome to My Eccomerce Product Store'));
 	app.listen(port, () => console.log(`API is Hosted at port ${port}`));
 	
