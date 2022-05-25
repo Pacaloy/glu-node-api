@@ -30,3 +30,4 @@
 // [SECTION] Server Gateway Response
 	app.get('/', (req, res) => res.send('Capstone Project 2'));
 	app.listen(port, () => console.log(`API is Hosted at port ${port}`));
+	
