@@ -39,3 +39,10 @@
 			return res.send(result);
 		}).catch(error => error);
 	};
+
+	// Retrieve All Orders
+	module.exports.getAllOrders = () => {
+		return Order.find({}).then(result => {
+			return result;
+		}).catch(error => error);
+	};
