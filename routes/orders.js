@@ -10,6 +10,5 @@
 	// Create Order
 	route.post('/createOrder', auth.verify, OrderController.createOrder);
 
-
 // [SECTION] Expose Route System
 	module.exports = route;

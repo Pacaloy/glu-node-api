@@ -17,7 +17,6 @@
 	app.use(express.json());
 	app.use(cors());
 
-
 // [SECTION] Database Connection
 	mongoose.connect(link);
 	const db = mongoose.connection;

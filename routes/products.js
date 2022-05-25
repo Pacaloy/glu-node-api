@@ -32,6 +32,5 @@
 		ProductController.archiveProduct(req.params).then(resultFromController => res.send(resultFromController));
 	});
 
-
 // [SECTION] Expose Route System
 	module.exports = route;
