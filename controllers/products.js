@@ -45,7 +45,7 @@
 			if (error) {
 				return false;
 			} else {
-				return {message: 'Update Failed'};
+				return {message: 'Product Updated'};
 			}
 		}).catch(error => error);
 	};

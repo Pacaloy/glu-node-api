@@ -17,9 +17,5 @@
 		UserController.loginUser(req.body).then(resultFromController => res.send(resultFromController));
 	});
 
-	// Create Order
-	route.post('/createOrder', auth.verify, UserController.createOrder);
-
-
 // [SECTION] Expose Route System
 	module.exports = route;

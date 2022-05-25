@@ -22,15 +22,7 @@
 		createdOn: {
 			type: Date,
 			default: new Date()
-		},
-		orders: [
-			{
-				orderId: {
-					type: String,
-					required: [true, 'Order ID is Required']
-				}
-			}
-		]
+		}
 	});
 
 // [SECTION] Model
