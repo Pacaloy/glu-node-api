@@ -42,3 +42,18 @@
 			}
 		});
 	};
+
+	// Set User as Admin
+	module.exports.setAdmin = (reqParams) => {
+		let updateAdmin = {
+			isAdmin: true
+		}
+
+		return User.findByIdAndUpdate(reqParams.setAdmin, updateAdmin).then((user, error) => {
+			if (error) {
+				return {message: 'Action Failed'};
+			} else {
+				return {message: 'User Set as Admin'};
+			}
+		}).catch(error => error);
+	};
