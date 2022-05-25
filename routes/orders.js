@@ -10,5 +10,8 @@
 	// Create Order
 	route.post('/createOrder', auth.verify, OrderController.createOrder);
 
+	// Retrieve Orders
+	route.get('/getOrders', auth.verify, OrderController.getOrders);
+
 // [SECTION] Expose Route System
 	module.exports = route;

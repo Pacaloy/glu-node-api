@@ -30,3 +30,12 @@
 			return res.send({message: 'Order Added'});
 		}
 	};
+
+	// Retrieve Orders
+	module.exports.getOrders = (req, res) => {
+		let user = req.user.id;
+
+		return Order.find({userId: user}).then(result => {
+			return res.send(result);
+		}).catch(error => error);
+	};
