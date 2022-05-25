@@ -19,9 +19,9 @@
 			{
 				products: [
 					{
-						productName: {
+						productId: {
 							type: String,
-							required: [true, 'Product Name is Required']
+							required: [true, 'Product ID is Required']
 						},
 						quantity: {
 							type: Number,
