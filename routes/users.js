@@ -22,5 +22,10 @@
 		UserController.setAdmin(req.params).then(resultFromController => res.send(resultFromController));
 	});
 
+	// Get the User's Details
+	route.get('/details', auth.verify, (req, res) => {
+		UserController.getProfile(req.user.id).then(resultFromController => res.send(resultFromController));
+	});
+
 // [SECTION] Expose Route System
 	module.exports = route;

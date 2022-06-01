@@ -57,3 +57,11 @@
 			}
 		}).catch(error => error);
 	};
+
+	// Get the User's Details
+	module.exports.getProfile = (data) => {
+		return User.findById(data).then(result => {
+			result.password = '';
+			return result;
+		});
+	};
