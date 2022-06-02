@@ -2,6 +2,7 @@
 	const Product = require('./../models/Product');
 
 // [SECTION] Functionalities
+
 	// Add Product
 	module.exports.addProduct = (reqBody) => {
 		let newProduct = new Product({
@@ -17,6 +18,13 @@
 				return product;
 			}
 		});
+	};
+	
+	// Retrieve All Courses
+	module.exports.getAllProducts = () => {
+		return Product.find({}).then(result => {
+			return result;
+		}).catch(error => error);
 	};
 
 	// Retrieve All Active Courses

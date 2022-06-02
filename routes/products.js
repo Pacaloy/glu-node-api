@@ -7,9 +7,15 @@
 	const route = express.Router();
 
 // [SECTION] Routes
+
 	// Add Product
 	route.post('/add', auth.verify, auth.verifyAdmin, (req, res) => {
 		ProductController.addProduct(req.body).then(resultFromController => res.send(resultFromController));
+	});
+
+	// Retrieve All Courses
+	route.get('/all', auth.verify, auth.verifyAdmin, (req, res) => {
+		ProductController.getAllProducts().then(resultFromController => res.send(resultFromController));
 	});
 
 	// Retrieve All Active Courses
