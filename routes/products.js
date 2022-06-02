@@ -13,12 +13,12 @@
 		ProductController.addProduct(req.body).then(resultFromController => res.send(resultFromController));
 	});
 
-	// Retrieve All Courses
-	route.get('/all', auth.verify, auth.verifyAdmin, (req, res) => {
+	// Retrieve All Products
+	route.get('/all', (req, res) => {
 		ProductController.getAllProducts().then(resultFromController => res.send(resultFromController));
 	});
 
-	// Retrieve All Active Courses
+	// Retrieve All Active Products
 	route.get('/active', (req, res) => {
 		ProductController.getAllActive().then(resultFromController => res.send(resultFromController));
 	});
@@ -28,7 +28,7 @@
 		ProductController.getProduct(req.params).then(resultFromController => res.send(resultFromController));
 	});
 
-	// Update Product
+	// Update a Product
 	route.put('/:productId', auth.verify, auth.verifyAdmin, (req, res) => {
 		ProductController.updateProduct(req.params, req.body).then(resultFromController => res.send(resultFromController));
 	});
@@ -36,6 +36,11 @@
 	// Archiving a Product
 	route.put('/:productId/archive', auth.verify, auth.verifyAdmin, (req, res) => {
 		ProductController.archiveProduct(req.params).then(resultFromController => res.send(resultFromController));
+	});
+
+	// Activating a Product
+	route.put('/:productId/activate', auth.verify, auth.verifyAdmin, (req, res) => {
+		ProductController.activateProduct(req.params).then(resultFromController => res.send(resultFromController));
 	});
 
 // [SECTION] Expose Route System

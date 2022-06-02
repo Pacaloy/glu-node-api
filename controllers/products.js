@@ -20,14 +20,14 @@
 		});
 	};
 	
-	// Retrieve All Courses
+	// Retrieve All Products
 	module.exports.getAllProducts = () => {
 		return Product.find({}).then(result => {
 			return result;
 		}).catch(error => error);
 	};
 
-	// Retrieve All Active Courses
+	// Retrieve All Active Products
 	module.exports.getAllActive = () => {
 		return Product.find({isActive: true}).then(result => {
 			return result;
@@ -41,7 +41,7 @@
 		}).catch(error => error);
 	};
 
-	// Update Product
+	// Update a Product
 	module.exports.updateProduct = (reqParams, reqBody) => {
 		let updatedProduct = {
 			name: reqBody.name,
@@ -69,6 +69,21 @@
 				return {message: 'Archiving Product Failed'};
 			} else {
 				return {message: 'Product Successfully Archived'};
+			}
+		}).catch(error => error);
+	};
+
+	// Activating a Product
+	module.exports.activateProduct = (reqParams) => {
+		let updateActiveField = {
+			isActive: true
+		};
+
+		return Product.findByIdAndUpdate(reqParams.productId, updateActiveField).then((product, error) => {
+			if (error) {
+				return {message: 'Activating Product Failed'};
+			} else {
+				return {message: 'Product Successfully Activated'};
 			}
 		}).catch(error => error);
 	};
