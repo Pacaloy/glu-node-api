@@ -23,6 +23,10 @@
 			type: Number,
 			required: [true, 'Total Amount is Required']
 		},
+		isPaid: {
+			type: Boolean,
+			default: false
+		},
 		purchasedOn: {
 			type: Date,
 			default: new Date()
