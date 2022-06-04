@@ -18,5 +18,15 @@
 		OrderController.getAllOrders().then(resultFromController => res.send(resultFromController));
 	});
 
+	// Cancel Order
+	route.delete('/:orderId', auth.verify, (req, res) => {
+		OrderController.deleteOrder(req.params).then(resultFromController => res.send(resultFromController));
+	});
+
+	// Checkout
+	route.put('/checkout', auth.verify, (req, res) => {
+		OrderController.checkoutOrders(req.user).then(resultFromController => res.send(resultFromController));
+	});
+
 // [SECTION] Expose Route System
 	module.exports = route;
