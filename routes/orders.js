@@ -28,5 +28,10 @@
 		OrderController.checkoutOrders(req.user).then(resultFromController => res.send(resultFromController));
 	});
 
+	// Retrieve User's Order History
+	route.get('/history', auth.verify, (req, res) => {
+		OrderController.orderHistory(req.user).then(resultFromController => res.send(resultFromController));
+	});
+
 // [SECTION] Expose Route System
 	module.exports = route;

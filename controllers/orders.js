@@ -68,3 +68,14 @@
 			}
 		});
 	};
+
+	// Retrieve User's Order History
+	module.exports.orderHistory = (reqUser) => {
+		return Order.find({userId: reqUser.id, isPaid: true}).then((result, error) => {
+			if (error) {
+				return false;
+			} else {
+				return result;
+			}
+		});
+	};
