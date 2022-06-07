@@ -8,7 +8,8 @@
 		let newProduct = new Product({
 			name: reqBody.name,
 			description: reqBody.description,
-			price: reqBody.price
+			price: reqBody.price,
+			imageLink : reqBody.imageLink
 		});
 
 		return newProduct.save().then((product, error) => {
@@ -46,7 +47,8 @@
 		let updatedProduct = {
 			name: reqBody.name,
 			description: reqBody.description,
-			price: reqBody.price
+			price: reqBody.price,
+			imageLink: reqBody.imageLink
 		};
 
 		return Product.findByIdAndUpdate(reqParams.productId, updatedProduct).then((product, error) => {

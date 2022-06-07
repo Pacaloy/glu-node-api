@@ -15,6 +15,10 @@
 			type: Number,
 			required: [true, 'Price is Required']
 		},
+		imageLink: {
+			type: String,
+			required: [true, 'Product Image Link is Required']
+		},
 		isActive: {
 			type: Boolean,
 			default: true
