@@ -14,7 +14,7 @@
 	route.get('/getOrders', auth.verify, OrderController.getOrders);
 
 	// Retrieve All Orders
-	route.get('/getAllOrders', auth.verify, auth.verifyAdmin, (req, res) => {
+	route.get('/getAllOrders', (req, res) => {
 		OrderController.getAllOrders().then(resultFromController => res.send(resultFromController));
 	});
 
